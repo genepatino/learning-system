@@ -5,7 +5,7 @@ import Home from "./components/Home";
 import Logout from "./components/Home";
 import RequiredAuth from "./components/RequiresAuth";
 
-import "./styles/index.css";
+import "./styles/index.scss";
 
 function App() {
   return (

@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { withRouter } from "react-router";
 import imageSesion from "../images/imageSesion.jpg";
 import "../components/FontAwesomeIcon";
-import "../styles/home.css";
-import "../styles/closeSesion.css";
+import "../styles/home.scss";
+import "../styles/closeSesion.scss";
 import classNames from "classnames";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 

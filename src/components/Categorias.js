@@ -3,7 +3,7 @@ import MenuItem from "../components/MenuItem";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./FontAwesomeIcon";
 import classNames from "classnames";
-import "../styles/categorias.css";
+import "../styles/categorias.scss";
 
 const Categorias = ({ categoryData, activeCategory, setActiveCategory }) => {
   const visible = categoryData.id === activeCategory;

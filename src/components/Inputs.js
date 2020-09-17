@@ -2,7 +2,7 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "../components/FontAwesomeIcon";
 
-import "../styles/inputs.css";
+import "../styles/inputs.scss";
 
 const Inputs = ({ label, type, name, value, icon, onChangeInput }) => {
   const handleInputChange = (e) => {

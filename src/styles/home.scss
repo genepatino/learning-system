@@ -1,0 +1,28 @@
+.container_homeTwo {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+  .home_menu {
+    padding-top: 20px;
+    width: 200px;
+    display: flex;
+    background-color: #18172a;
+    flex-direction: column;
+    .logo {
+      font-size: 4em;
+      color: #6d909e;
+      padding: 0px 68px;
+      margin: 15px 0px;
+    }
+    .close_user {
+      margin-top: auto;
+    }
+  }
+  .home_Titulo {
+    background-color: #eff1f4;
+    width: 100%;
+    width: 100%;
+    display: flex;
+    padding: 10px 0 0 30px;
+  }
+}
