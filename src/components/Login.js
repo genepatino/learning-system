@@ -7,7 +7,7 @@ import Checkbox from "rc-checkbox";
 import "rc-checkbox/assets/index.css";
 import Inputs from "../components/Inputs";
 
-import "../styles/login.css";
+import "../styles/login.scss";
 import imageFrom from "../images/imagenCentral.png";
 import Button from "../components/Button";
 
@@ -84,7 +84,7 @@ const Login = ({ _match, _location, history }) => {
               />
 
               <div className="remember">
-                <div className="input_remenber">
+                <div className="input-remenber">
                   <label className="label-checkbox">
                     <Checkbox className="checkbox-style" />
                     <span className="connected">Mantenerme conectado</span>

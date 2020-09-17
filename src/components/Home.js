@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Categorias from "../components/Categorias";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "../components/FontAwesomeIcon";
-import "../styles/home.css";
+import "../styles/home.scss";
 import CloseSesion from "./CloseSesion";
 
 const Home = () => {
