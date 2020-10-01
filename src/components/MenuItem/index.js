@@ -1,11 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "../styles/menuItem.scss";
+import "./menuItem.scss";
 
 const MenuItem = ({ name }) => {
   return (
-    <div className="menu_item">
-      <li className="menu_list">
+    <div className="menu-item">
+      <li className="menu-list">
         <Link className="ancla" to="#">
           {name}
         </Link>

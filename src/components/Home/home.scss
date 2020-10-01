@@ -1,8 +1,8 @@
-.container_homeTwo {
+.container-homeTwo {
   display: flex;
   height: 100vh;
   overflow: hidden;
-  .home_menu {
+  .home-menu {
     padding-top: 20px;
     width: 200px;
     display: flex;
@@ -14,11 +14,11 @@
       padding: 0px 68px;
       margin: 15px 0px;
     }
-    .close_user {
+    .close-user {
       margin-top: auto;
     }
   }
-  .home_Titulo {
+  .home-Titulo {
     background-color: #eff1f4;
     width: 100%;
     width: 100%;

@@ -1,12 +1,12 @@
 .form-group {
   display: flex;
   flex-flow: column;
-  .label_enter {
+  .label-enter {
     font-size: 13px;
     color: #6f6e79;
     font-weight: bold;
   }
-  .form_input {
+  .form-input {
     margin: 5px 0 20px 0px;
     padding-left: 15px;
     height: 35px;
@@ -15,7 +15,7 @@
     font-size: 14px;
     border: 1px solid gainsboro;
   }
-  .icon_password {
+  .icon-password {
     margin-top: -46px;
     padding-right: 10px;
     color: #c4c5ca;

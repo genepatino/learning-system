@@ -1,12 +1,12 @@
-.home_select {
+.home-select {
   margin: 8px;
   border-radius: 4px;
-  .categorias_list {
+  .categorias-list {
     list-style-type: none;
     padding: 10px 6px;
     margin-bottom: 16px;
     cursor: pointer;
-    .icon_home {
+    .icon-home {
       margin: 0px 14px;
       color: #74747f;
       font-size: 1.2em;
@@ -29,8 +29,8 @@
   }
 }
 
-.categorias_list:hover {
-  .icon_home {
+.categorias-list:hover {
+  .icon-home {
     color: white;
   }
   .title {
@@ -40,8 +40,8 @@
 
 .active {
   background-color: #10101a;
-  .categorias_list {
-    .icon_home {
+  .categorias-list {
+    .icon-home {
       color: #4c3acd;
     }
     .title {

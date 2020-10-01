@@ -1,9 +1,9 @@
 import React from "react";
-import MenuItem from "../components/MenuItem";
+import MenuItem from "../MenuItem";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import "./FontAwesomeIcon";
+import "../FontAwesomeIcon";
 import classNames from "classnames";
-import "../styles/categorias.scss";
+import "./categorias.scss";
 
 const Categorias = ({ categoryData, activeCategory, setActiveCategory }) => {
   const visible = categoryData.id === activeCategory;
@@ -17,9 +17,9 @@ const Categorias = ({ categoryData, activeCategory, setActiveCategory }) => {
   };
 
   return (
-    <div className={classNames("home_select", { active: visible })}>
-      <li className="categorias_list" onClick={handleClick}>
-        <FontAwesomeIcon className="icon_home" icon={categoryData.icon} />
+    <div className={classNames("home-select", { active: visible })}>
+      <li className="categorias-list" onClick={handleClick}>
+        <FontAwesomeIcon className="icon-home" icon={categoryData.icon} />
         <span className="title">{categoryData.span}</span>
         <ul className={classNames("ul-container", { visible: visible })}>
           {categoryData.items.map((item, index) => {
