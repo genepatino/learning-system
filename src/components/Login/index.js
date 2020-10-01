@@ -5,12 +5,12 @@ import { connect } from "react-redux";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Checkbox from "rc-checkbox";
 import "rc-checkbox/assets/index.css";
-import Inputs from "../components/Inputs";
-import Button from "../components/Button";
-import LoginActions from "../redux/reducers/loginReducer";
-import "../components/FontAwesomeIcon";
-import "../styles/login.scss";
-import imageFrom from "../images/imagenCentral.png";
+import Inputs from "../Inputs/index";
+import Button from "../Buttom/index";
+import LoginActions from "../../redux/reducers/loginReducer";
+import "../FontAwesomeIcon";
+import "./login.scss";
+import imageFrom from "../../images/imagenCentral.png";
 
 const Login = ({
   _match,
@@ -63,10 +63,10 @@ const Login = ({
               {error !== "" && (
                 <div className="error">
                   <FontAwesomeIcon
-                    className="icon_error"
+                    className="icon-error"
                     icon="exclamation-circle"
                   />
-                  <span className="message_error">
+                  <span className="message-error">
                     <b>{error}</b>
                   </span>
                 </div>

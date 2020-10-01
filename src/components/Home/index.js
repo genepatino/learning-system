@@ -1,13 +1,13 @@
-import React, { useState } from "react";
-import Categorias from "../components/Categorias";
+import React from "react";
+import { connect } from "react-redux";
+import AppActions from "../../redux/reducers/appReducer";
+import Categorias from "../Categorias/index";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import "../components/FontAwesomeIcon";
-import "../styles/home.scss";
-import CloseSesion from "./CloseSesion";
+import CloseSesion from "../CloseSesion/index";
+import "../FontAwesomeIcon";
+import "./home.scss";
 
-const Home = () => {
-  const [activeCategory, setActiveCategory] = useState(null);
-
+const Home = ({ activeCategory, setActiveCategory }) => {
   const menuData = [
     {
       id: 0,
@@ -42,10 +42,10 @@ const Home = () => {
   ];
 
   return (
-    <div className="container_homeTwo">
-      <div className="home_menu">
+    <div className="container-homeTwo">
+      <div className="home-menu">
         <FontAwesomeIcon className="logo" icon="globe-americas" />
-        <ul className="ul_home">
+        <ul className="ul-home">
           {menuData.map((categoria) => (
             <Categorias
               key={categoria.id}
@@ -55,16 +55,29 @@ const Home = () => {
             />
           ))}
         </ul>
-        <div className="close_user">
+        <div className="close-user">
           <CloseSesion />
         </div>
       </div>
 
-      <div className="home_Titulo">
+      <div className="home-Titulo">
         <h3>Vehículos</h3>
       </div>
     </div>
   );
 };
 
-export default Home;
+const mapStateToProps = (state) => {
+  return {
+    activeCategory: state.appReducer.activeCategory,
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    setActiveCategory: (activeCategoryValue) =>
+      dispatch(AppActions.setActiveCategory(activeCategoryValue)),
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Home);

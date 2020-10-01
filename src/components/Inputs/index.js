@@ -1,8 +1,8 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import "../components/FontAwesomeIcon";
+import "../FontAwesomeIcon";
 
-import "../styles/inputs.scss";
+import "./inputs.scss";
 
 const Inputs = ({ label, type, name, value, icon, onChangeInput }) => {
   const handleInputChange = (e) => {
@@ -11,15 +11,15 @@ const Inputs = ({ label, type, name, value, icon, onChangeInput }) => {
 
   return (
     <div className="form-group">
-      <label className="label_enter">{label}</label>
+      <label className="label-enter">{label}</label>
       <input
         onChange={handleInputChange}
-        className="form_input"
+        className="form-input"
         type={type}
         name={name}
         value={value}
       ></input>
-      {icon !== "" && <FontAwesomeIcon className="icon_password" icon={icon} />}
+      {icon !== "" && <FontAwesomeIcon className="icon-password" icon={icon} />}
     </div>
   );
 };

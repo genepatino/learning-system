@@ -1,14 +1,21 @@
-import React, { useState } from "react";
+import React from "react";
+import { connect } from "react-redux";
+import AppActions from "../../redux/reducers/appReducer";
 import { withRouter } from "react-router";
-import imageSesion from "../images/imageSesion.jpg";
-import "../components/FontAwesomeIcon";
-import "../styles/home.scss";
-import "../styles/closeSesion.scss";
+import imageSesion from "../../images/imageSesion.jpg";
+import "../FontAwesomeIcon";
+import "./closeSesion.scss";
 import classNames from "classnames";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-const CloseSesion = ({ _match, _location, history }) => {
-  const [activeSesion, setActiveSesion] = useState(false);
+const CloseSesion = ({
+  _match,
+  _location,
+  history,
+  activeSesion,
+  setActiveSesion,
+}) => {
+  /* const [activeSesion, setActiveSesion] = useState(false); */
 
   const handleClick = () => {
     setActiveSesion(!activeSesion);
@@ -17,6 +24,7 @@ const CloseSesion = ({ _match, _location, history }) => {
   const handleCloseSesion = (e) => {
     window.localStorage.removeItem("USER_KEY");
     history.push("/");
+    setActiveSesion(!activeSesion);
   };
 
   return (
@@ -26,7 +34,7 @@ const CloseSesion = ({ _match, _location, history }) => {
           <img className="image-sesion" src={imageSesion} width="50px" alt="" />
           <span className="user-name">Génesis</span>
         </div>
-        <span className="user_icon_point">
+        <span className="user-icon-point">
           <FontAwesomeIcon
             onClick={handleClick}
             className="icon"
@@ -50,5 +58,21 @@ const CloseSesion = ({ _match, _location, history }) => {
   );
 };
 
+const mapStateToProps = (state) => {
+  return {
+    activeSesion: state.appReducer.activeSesion,
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    setActiveSesion: (activeSesionValue) =>
+      dispatch(AppActions.setActiveSesion(activeSesionValue)),
+  };
+};
+
 const CloseSesionWithRouter = withRouter(CloseSesion);
-export default CloseSesionWithRouter;
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(CloseSesionWithRouter);
