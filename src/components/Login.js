@@ -1,21 +1,28 @@
-import React, { useState } from "react";
+import React from "react";
 import { withRouter } from "react-router";
 import { Link } from "react-router-dom";
+import { connect } from "react-redux";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import "../components/FontAwesomeIcon";
 import Checkbox from "rc-checkbox";
 import "rc-checkbox/assets/index.css";
 import Inputs from "../components/Inputs";
-
+import Button from "../components/Button";
+import LoginActions from "../redux/reducers/loginReducer";
+import "../components/FontAwesomeIcon";
 import "../styles/login.scss";
 import imageFrom from "../images/imagenCentral.png";
-import Button from "../components/Button";
 
-const Login = ({ _match, _location, history }) => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
-
+const Login = ({
+  _match,
+  _location,
+  history,
+  email,
+  setEmail,
+  password,
+  setPassword,
+  error,
+  setError,
+}) => {
   const expressions = {
     regexName: /^[A-z]\D{3,30}/g,
     regexEmail: /^[a-z][a-z0-9!"#$%&'()*+,\-./:;<=>?[\\\]^_`{|}~]+@[a-z]+\.[a-z]+$/g,
@@ -117,5 +124,22 @@ const Login = ({ _match, _location, history }) => {
   );
 };
 
+const mapStateToProps = (state) => {
+  return {
+    email: state.loginReducer.email,
+    password: state.loginReducer.password,
+    error: state.loginReducer.error,
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    setEmail: (emailValue) => dispatch(LoginActions.setEmail(emailValue)),
+    setPassword: (passwordValue) =>
+      dispatch(LoginActions.setPassword(passwordValue)),
+    setError: (errorValue) => dispatch(LoginActions.setError(errorValue)),
+  };
+};
+
 const LoginWithRouter = withRouter(Login);
-export default LoginWithRouter;
+export default connect(mapStateToProps, mapDispatchToProps)(LoginWithRouter);
