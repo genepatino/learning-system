@@ -1,7 +1,9 @@
 .menu-item {
   margin: 8px 33px;
+
   .menu-list {
-    list-style-type: none;
+    /* list-style-type: none; */
+
     .ancla {
       text-decoration: none;
       color: #4d4e55;
@@ -10,8 +12,15 @@
       padding-left: 10px;
       font-weight: bold;
     }
+    .visible {
+      list-style-type: none;
+      color: aliceblue;
+      padding-bottom: 0px;
+    }
   }
-  .ancla:hover {
-    color: aliceblue;
+  .menu-list:hover {
+    .ancla {
+      color: aliceblue;
+    }
   }
 }

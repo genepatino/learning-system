@@ -14,6 +14,8 @@ const CloseSesion = ({
   history,
   activeSesion,
   setActiveSesion,
+  setActiveCategory,
+  setActiveItem,
 }) => {
   /* const [activeSesion, setActiveSesion] = useState(false); */
 
@@ -25,21 +27,22 @@ const CloseSesion = ({
     window.localStorage.removeItem("USER_KEY");
     history.push("/");
     setActiveSesion(!activeSesion);
+    setActiveItem(null);
+    setActiveCategory(null);
   };
 
   return (
     <div className="user-container">
-      <div className={classNames("login-out", { loginActive: activeSesion })}>
+      <div
+        className={classNames("login-out", { loginActive: activeSesion })}
+        onClick={handleClick}
+      >
         <div className="imag">
           <img className="image-sesion" src={imageSesion} width="50px" alt="" />
           <span className="user-name">Génesis</span>
         </div>
         <span className="user-icon-point">
-          <FontAwesomeIcon
-            onClick={handleClick}
-            className="icon"
-            icon="ellipsis-h"
-          />
+          <FontAwesomeIcon className="icon" icon="ellipsis-h" />
         </span>
       </div>
       <div
@@ -68,6 +71,10 @@ const mapDispatchToProps = (dispatch) => {
   return {
     setActiveSesion: (activeSesionValue) =>
       dispatch(AppActions.setActiveSesion(activeSesionValue)),
+    setActiveCategory: (activeCategoryValue) =>
+      dispatch(AppActions.setActiveCategory(activeCategoryValue)),
+    setActiveItem: (activeItem) =>
+      dispatch(AppActions.setActiveItem(activeItem)),
   };
 };
 

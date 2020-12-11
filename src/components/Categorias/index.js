@@ -1,11 +1,19 @@
 import React from "react";
 import MenuItem from "../MenuItem";
+import { connect } from "react-redux";
+import AppActions from "../../redux/reducers/appReducer";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "../FontAwesomeIcon";
 import classNames from "classnames";
 import "./categorias.scss";
 
-const Categorias = ({ categoryData, activeCategory, setActiveCategory }) => {
+const Categorias = ({
+  categoryData,
+  activeCategory,
+  activeItem,
+  setActiveCategory,
+  setActiveItem,
+}) => {
   const visible = categoryData.id === activeCategory;
 
   const handleClick = () => {
@@ -18,12 +26,27 @@ const Categorias = ({ categoryData, activeCategory, setActiveCategory }) => {
 
   return (
     <div className={classNames("home-select", { active: visible })}>
-      <li className="categorias-list" onClick={handleClick}>
-        <FontAwesomeIcon className="icon-home" icon={categoryData.icon} />
-        <span className="title">{categoryData.span}</span>
-        <ul className={classNames("ul-container", { visible: visible })}>
+      <li className="categorias-list">
+        <div className="container-icon-list" onClick={handleClick}>
+          <FontAwesomeIcon className="icon-home" icon={categoryData.icon} />
+          <span className="title">{categoryData.span}</span>
+        </div>
+
+        <ul
+          className={classNames("ul-container", {
+            visible: visible,
+          })}
+        >
           {categoryData.items.map((item, index) => {
-            return <MenuItem name={item} key={`${index}-${item}`} />;
+            return (
+              <MenuItem
+                itemsData={item}
+                name={item.name}
+                key={`${index}-${item}`}
+                activeItem={activeItem}
+                setActiveItem={setActiveItem}
+              />
+            );
           })}
         </ul>
       </li>
@@ -31,4 +54,17 @@ const Categorias = ({ categoryData, activeCategory, setActiveCategory }) => {
   );
 };
 
-export default Categorias;
+const mapStateToProps = (state) => {
+  return {
+    activeItem: state.appReducer.activeItem,
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    setActiveItem: (activeItem) =>
+      dispatch(AppActions.setActiveItem(activeItem)),
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Categorias);

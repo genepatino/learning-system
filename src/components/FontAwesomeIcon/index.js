@@ -14,6 +14,11 @@ import {
   faGlobeAmericas,
   faEllipsisH,
   faSignOutAlt,
+  faFileSignature,
+  faPenSquare,
+  faTimes,
+  faPlus,
+  faTimesCircle,
 } from "@fortawesome/free-solid-svg-icons";
 
 library.add(
@@ -30,5 +35,11 @@ library.add(
   faCat,
   faGlobeAmericas,
   faEllipsisH,
-  faSignOutAlt
+  faSignOutAlt,
+  faFileSignature,
+  faPenSquare,
+  faTimes,
+  faPlus,
+  faTimesCircle,
+  faTimes
 );

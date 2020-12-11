@@ -9,6 +9,7 @@
     display: flex;
     justify-content: center;
     width: 820px;
+    height: 475px;
     .container-image {
       justify-content: center;
       width: 260px;
@@ -88,6 +89,17 @@
         }
       }
     }
+  }
+}
+.checkbox-style {
+  .rc-checkbox-inner {
+    border-color: #d6dbd7;
+  }
+  .rc-checkbox-input:focus {
+    border-color: #d6dbd7;
+  }
+  .rc-checkbox-inner {
+    border-color: #d6dbd7;
   }
 }
 

@@ -1,67 +1,62 @@
 import React from "react";
 import { connect } from "react-redux";
+import { withRouter } from "react-router";
+import { Route, Switch, Link } from "react-router-dom";
 import AppActions from "../../redux/reducers/appReducer";
 import Categorias from "../Categorias/index";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import CloseSesion from "../CloseSesion/index";
+import NotesView from "../NotesView/index";
 import "../FontAwesomeIcon";
 import "./home.scss";
 
-const Home = ({ activeCategory, setActiveCategory }) => {
-  const menuData = [
-    {
-      id: 0,
-      icon: "cubes",
-      span: "Recursos",
-      items: ["Vehículos", "Personas", "En Servicio", "Transportadoras"],
-    },
-    {
-      id: 1,
-      icon: "dolly",
-      span: "Logística",
-      items: ["item 1", "item 2", "item 3"],
-    },
-    {
-      id: 2,
-      icon: "hand-holding-usd",
-      span: "Finanzas",
-      items: ["item 1", "item 2", "item 3"],
-    },
-    {
-      id: 3,
-      icon: "tools",
-      span: "Configuración",
-      items: ["item 1", "item 2", "item 3"],
-    },
-    {
-      id: 4,
-      icon: "edit",
-      span: "Auditoría",
-      items: ["item 1", "item 2", "item 3"],
-    },
-  ];
+const Home = ({
+  location,
+  activeCategory,
+  menuData,
+  setActiveCategory,
+  setActiveItem,
+  setActiveSesion,
+}) => {
+  const handleClickLogo = () => {
+    setActiveItem(null);
+    setActiveCategory(null);
+    setActiveSesion(false);
+  };
 
   return (
     <div className="container-homeTwo">
       <div className="home-menu">
-        <FontAwesomeIcon className="logo" icon="globe-americas" />
-        <ul className="ul-home">
-          {menuData.map((categoria) => (
-            <Categorias
-              key={categoria.id}
-              categoryData={categoria}
-              activeCategory={activeCategory}
-              setActiveCategory={setActiveCategory}
-            />
-          ))}
-        </ul>
+        <div className="home-categorias">
+          <Link className="logo-home" to="/admin" onClick={handleClickLogo}>
+            <FontAwesomeIcon className="logo" icon="globe-americas" />
+          </Link>
+
+          <ul className="ul-home">
+            {menuData.map((categoria) => (
+              <Categorias
+                key={categoria.id}
+                categoryData={categoria}
+                activeCategory={activeCategory}
+                setActiveCategory={setActiveCategory}
+              />
+            ))}
+          </ul>
+        </div>
         <div className="close-user">
           <CloseSesion />
         </div>
       </div>
 
-      <div className="home-Titulo">
-        <h3>Vehículos</h3>
+      <div className="home-container">
+        <div className="home-header">
+          <div className="title">Notas</div>
+        </div>
+        <div className="home-content">
+          <Switch location={location}>
+            <Route exact path="/admin/notes" component={NotesView} />
+          </Switch>
+        </div>
       </div>
     </div>
   );
@@ -70,6 +65,7 @@ const Home = ({ activeCategory, setActiveCategory }) => {
 const mapStateToProps = (state) => {
   return {
     activeCategory: state.appReducer.activeCategory,
+    menuData: state.appReducer.menuData,
   };
 };
 
@@ -77,7 +73,11 @@ const mapDispatchToProps = (dispatch) => {
   return {
     setActiveCategory: (activeCategoryValue) =>
       dispatch(AppActions.setActiveCategory(activeCategoryValue)),
+    setActiveItem: (activeItem) =>
+      dispatch(AppActions.setActiveItem(activeItem)),
+    setActiveSesion: (activeSesion) =>
+      dispatch(AppActions.setActiveSesion(activeSesion)),
   };
 };
-
-export default connect(mapStateToProps, mapDispatchToProps)(Home);
+const HomeWithRouter = withRouter(Home);
+export default connect(mapStateToProps, mapDispatchToProps)(HomeWithRouter);
