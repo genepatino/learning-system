@@ -43,7 +43,8 @@ const Login = ({
       );
     } else if (emailUser === email && passwordUser === password) {
       window.localStorage.setItem("USER_KEY", "0246");
-      history.push("/home");
+      history.push("/admin");
+      setError("");
     } else {
       setError("El correo o contraseña ingresados son incorrectos");
     }
@@ -60,6 +61,7 @@ const Login = ({
           <form onSubmit={handleSubmit}>
             <div className="form">
               <h2 className="h2-title">Iniciar sesión</h2>
+
               {error !== "" && (
                 <div className="error">
                   <FontAwesomeIcon

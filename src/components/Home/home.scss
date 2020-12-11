@@ -8,21 +8,48 @@
     display: flex;
     background-color: #18172a;
     flex-direction: column;
-    .logo {
-      font-size: 4em;
-      color: #6d909e;
-      padding: 0px 68px;
-      margin: 15px 0px;
-    }
-    .close-user {
-      margin-top: auto;
+    justify-content: space-between;
+    .home-categorias {
+      .logo {
+        font-size: 4em;
+        color: #6d909e;
+        padding: 0px 68px;
+        margin: 15px 0px;
+        cursor: pointer;
+      }
+      .close-user {
+        margin-top: auto;
+      }
     }
   }
-  .home-Titulo {
-    background-color: #eff1f4;
-    width: 100%;
-    width: 100%;
+  .home-container {
     display: flex;
-    padding: 10px 0 0 30px;
+    flex-direction: column;
+    width: 100%;
+    background: #e6e9ef;
+    .home-header {
+      display: flex;
+      padding: 30px;
+      box-shadow: 02px -1px 5px 0px #848484;
+      background: whitesmoke;
+      .title {
+        font-size: 19px;
+        font-weight: 800;
+      }
+    }
+    .home-content {
+      display: flex;
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+.addNotes::placeholder {
+  color: rgb(172, 165, 165);
+}
+
+@media all and (max-width: 800px) {
+  .home-container {
+    background-color: green;
   }
 }

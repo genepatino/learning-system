@@ -1,5 +1,6 @@
 .login-out {
   display: flex;
+  cursor: pointer;
   justify-content: space-between;
   margin: 8px;
   border-radius: 4px;
@@ -20,7 +21,6 @@
     }
   }
   .user-icon-point {
-    cursor: pointer;
     .icon {
       color: #74747f;
       margin-top: 8px;

@@ -1,6 +1,6 @@
 .button-central {
   margin: 32px 0;
-  padding: 13px 18px;
+  padding: 13px 16px;
   color: white;
   background: #372593;
   font-size: 16px;
@@ -9,8 +9,4 @@
   outline: none;
   border: 1px solid gainsboro;
   cursor: pointer;
-}
-
-.button-central:active {
-  box-shadow: 1px 1px 1px #000;
 }
