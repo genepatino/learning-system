@@ -5,14 +5,20 @@
   margin: 8px;
   border-radius: 4px;
   align-items: center;
-  .imag {
+  .logo-name-user {
     display: flex;
     padding: 16px;
     align-items: center;
-    .image-sesion {
+    .logo-user {
+      display: flex;
+      align-items: center;
+      justify-content: center;
       width: 42px;
       height: 38px;
+      font-size: 20px;
+      background-color: #e6e9ef;
       border-radius: 50%;
+      font-weight: 800;
     }
     .user-name {
       margin-left: 18px;
@@ -34,11 +40,11 @@
   position: absolute;
   padding: 4px;
   border-radius: 6px;
-  margin-top: -176px;
+  margin-top: -202px;
   margin-left: 187px;
   display: none;
   .information-user {
-    margin: 12px;
+    margin: 10px 12px;
     border-bottom: 1px solid #eee;
     .name-sesion {
       color: black;
@@ -59,6 +65,18 @@
       color: black;
     }
   }
+
+  .icon-language {
+    margin: 10px;
+    cursor: pointer;
+    .icon {
+      color: red;
+      margin-right: 10px;
+    }
+    .close-span-sesion {
+      color: black;
+    }
+  }
 }
 
 .active {
@@ -67,7 +85,7 @@
 
 .login-out:hover {
   background-color: #10101a;
-  .imag {
+  .logo-name-user {
     .user-name {
       color: white;
     }
@@ -81,7 +99,7 @@
 
 .loginActive {
   background-color: #10101a;
-  .imag {
+  .logo-name-user {
     .user-name {
       color: white;
     }

@@ -3,11 +3,13 @@ import { connect } from "react-redux";
 import { withRouter } from "react-router";
 import NoteActions from "../../redux/reducers/noteReducer";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useTranslation } from "react-i18next";
 import Notes from "../Notes";
 import "../FontAwesomeIcon";
 import "./notesView.scss";
 
 const NotesView = ({ notesData, appendNoteData }) => {
+  const [t] = useTranslation("global");
   const [noteTitle, setNoteTitle] = useState("");
 
   const handleInput = (event) => {
@@ -33,7 +35,7 @@ const NotesView = ({ notesData, appendNoteData }) => {
       <div className="add-note-container">
         <input
           className="add-notes-input"
-          placeholder="Añade una nota..."
+          placeholder={t("labels.add-note")}
           type="text"
           name="note"
           value={noteTitle}

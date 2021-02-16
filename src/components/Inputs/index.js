@@ -4,7 +4,15 @@ import "../FontAwesomeIcon";
 
 import "./inputs.scss";
 
-const Inputs = ({ label, type, name, value, icon, onChangeInput }) => {
+const Inputs = ({
+  label,
+  type,
+  name,
+  value,
+  icon,
+  placeholder,
+  onChangeInput,
+}) => {
   const handleInputChange = (e) => {
     onChangeInput(e.target.value);
   };
@@ -14,6 +22,7 @@ const Inputs = ({ label, type, name, value, icon, onChangeInput }) => {
       <label className="label-enter">{label}</label>
       <input
         onChange={handleInputChange}
+        placeholder={placeholder}
         className="form-input"
         type={type}
         name={name}

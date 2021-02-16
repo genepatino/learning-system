@@ -1,19 +1,20 @@
 .container-homeTwo {
+  background: #e6e9ef;
   display: flex;
+  overflow: auto;
   height: 100vh;
-  overflow: hidden;
   .home-menu {
-    padding-top: 20px;
     width: 200px;
     display: flex;
     background-color: #18172a;
     flex-direction: column;
     justify-content: space-between;
+
     .home-categorias {
       .logo {
         font-size: 4em;
         color: #6d909e;
-        padding: 0px 68px;
+        padding: 10px 68px;
         margin: 15px 0px;
         cursor: pointer;
       }
@@ -25,31 +26,32 @@
   .home-container {
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: 100vw;
     background: #e6e9ef;
+
     .home-header {
-      display: flex;
+      display: none;
+    }
+
+    .titleHeader {
+      display: block;
       padding: 30px;
       box-shadow: 02px -1px 5px 0px #848484;
       background: whitesmoke;
-      .title {
-        font-size: 19px;
-        font-weight: 800;
-      }
     }
+
     .home-content {
       display: flex;
-      width: 100%;
+      justify-content: center;
+      align-items: center;
       height: 100%;
+      margin: 50px 0px;
     }
   }
+}
+ul {
+  margin: 0px;
 }
 .addNotes::placeholder {
   color: rgb(172, 165, 165);
-}
-
-@media all and (max-width: 800px) {
-  .home-container {
-    background-color: green;
-  }
 }

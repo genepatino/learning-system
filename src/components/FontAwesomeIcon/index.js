@@ -19,6 +19,12 @@ import {
   faTimes,
   faPlus,
   faTimesCircle,
+  faUsers,
+  faUserEdit,
+  faAt,
+  faUser,
+  faPlusCircle,
+  faUserPlus,
 } from "@fortawesome/free-solid-svg-icons";
 
 library.add(
@@ -41,5 +47,11 @@ library.add(
   faTimes,
   faPlus,
   faTimesCircle,
-  faTimes
+  faTimes,
+  faUsers,
+  faUserEdit,
+  faAt,
+  faUser,
+  faPlusCircle,
+  faUserPlus
 );

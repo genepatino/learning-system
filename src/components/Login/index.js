@@ -6,11 +6,13 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Checkbox from "rc-checkbox";
 import "rc-checkbox/assets/index.css";
 import Inputs from "../Inputs/index";
-import Button from "../Buttom/index";
+import Button from "../Button/index";
 import LoginActions from "../../redux/reducers/loginReducer";
+import imageFrom from "../../images/imagenCentral.png";
+import { useTranslation } from "react-i18next";
+
 import "../FontAwesomeIcon";
 import "./login.scss";
-import imageFrom from "../../images/imagenCentral.png";
 
 const Login = ({
   _match,
@@ -23,6 +25,8 @@ const Login = ({
   error,
   setError,
 }) => {
+  const [t] = useTranslation("global");
+
   const expressions = {
     regexName: /^[A-z]\D{3,30}/g,
     regexEmail: /^[a-z][a-z0-9!"#$%&'()*+,\-./:;<=>?[\\\]^_`{|}~]+@[a-z]+\.[a-z]+$/g,
@@ -60,7 +64,7 @@ const Login = ({
         <div className="login-form">
           <form onSubmit={handleSubmit}>
             <div className="form">
-              <h2 className="h2-title">Iniciar sesión</h2>
+              <h2 className="h2-title">{t("titles.h2-title-login")}</h2>
 
               {error !== "" && (
                 <div className="error">
@@ -75,7 +79,7 @@ const Login = ({
               )}
 
               <Inputs
-                label="Correo electrónico"
+                label={t("labels.email")}
                 type="email"
                 name="email"
                 value={email}
@@ -84,7 +88,7 @@ const Login = ({
               />
 
               <Inputs
-                label="Contraseña"
+                label={t("labels.password")}
                 type="password"
                 name="password"
                 value={password}
@@ -96,25 +100,27 @@ const Login = ({
                 <div className="input-remenber">
                   <label className="label-checkbox">
                     <Checkbox className="checkbox-style" />
-                    <span className="connected">Mantenerme conectado</span>
+                    <span className="connected">
+                      {t("labels.stay-connected")}
+                    </span>
                   </label>
                 </div>
                 <div className="link-remember">
                   <Link className="link" to="/">
-                    ¿Olvidaste tu contraseña?
+                    {t("labels.forgot-password")}
                   </Link>
                 </div>
               </div>
-              <Button button="Iniciar sesión" />
+              <Button button={t("labels.log-on")} />
 
               <footer className="footer-container">
                 <div className="footer-login">
                   <span className="inscribete">
-                    ¿Eres una organización nueva?
+                    {t("labels.new-organization")}
                   </span>
 
                   <Link className="link-register" to="/">
-                    Inscríbete aquí
+                    {t("labels.sign-up")}
                   </Link>
                 </div>
               </footer>

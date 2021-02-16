@@ -1,0 +1,49 @@
+.container-access-user {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.edit-user-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #80809a;
+  width: 100%;
+  max-width: 600px;
+  padding: 15px 0px;
+
+  .title {
+    margin: 0px;
+    margin-bottom: 15px;
+  }
+
+  .edit-user {
+    display: flex;
+    background: white;
+    width: 100%;
+    flex-direction: column;
+    padding: 10px 0px;
+    .edit-user-name {
+      display: flex;
+      justify-content: space-between;
+      margin: 0px 15px;
+    }
+    .edit-user-email {
+      display: flex;
+      justify-content: space-between;
+      margin: 0px 15px;
+    }
+    .edit-user-gender {
+      display: flex;
+      justify-content: space-between;
+      margin: 0px 15px;
+    }
+    .edit-user-status {
+      display: flex;
+      justify-content: space-between;
+      margin: 0px 15px;
+    }
+  }
+}

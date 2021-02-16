@@ -81,7 +81,7 @@ const Modal = ({
                         key={`annotation-item-${index}`}
                         className="annotation-item"
                       >
-                        <div className="checkbox-annotation">
+                        <div className="checkbox-annotation" lang="es">
                           <Checkbox
                             id={annotation.annotationId}
                             checked={annotation.completed}

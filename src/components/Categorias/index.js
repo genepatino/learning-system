@@ -5,6 +5,7 @@ import AppActions from "../../redux/reducers/appReducer";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "../FontAwesomeIcon";
 import classNames from "classnames";
+import { useTranslation } from "react-i18next";
 import "./categorias.scss";
 
 const Categorias = ({
@@ -14,6 +15,8 @@ const Categorias = ({
   setActiveCategory,
   setActiveItem,
 }) => {
+  const [t] = useTranslation("global");
+
   const visible = categoryData.id === activeCategory;
 
   const handleClick = () => {
@@ -29,7 +32,7 @@ const Categorias = ({
       <li className="categorias-list">
         <div className="container-icon-list" onClick={handleClick}>
           <FontAwesomeIcon className="icon-home" icon={categoryData.icon} />
-          <span className="title">{categoryData.span}</span>
+          <span className="title">{t(categoryData.span)}</span>
         </div>
 
         <ul
@@ -41,7 +44,7 @@ const Categorias = ({
             return (
               <MenuItem
                 itemsData={item}
-                name={item.name}
+                name={t(item.name)}
                 key={`${index}-${item}`}
                 activeItem={activeItem}
                 setActiveItem={setActiveItem}

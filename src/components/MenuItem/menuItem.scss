@@ -2,13 +2,14 @@
   margin: 8px 33px;
 
   .menu-list {
-    /* list-style-type: none; */
+    display: flex;
+    justify-content: flex-start;
 
     .ancla {
       text-decoration: none;
       color: #4d4e55;
       font-size: 15px;
-      padding-bottom: 10px;
+
       padding-left: 10px;
       font-weight: bold;
     }

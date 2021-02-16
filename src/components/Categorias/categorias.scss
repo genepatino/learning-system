@@ -3,9 +3,12 @@
   border-radius: 4px;
   .categorias-list {
     list-style-type: none;
-    padding: 10px 6px;
+    padding: 5px;
     margin-bottom: 16px;
     cursor: pointer;
+    .container-icon-list {
+      padding: 8px 0px;
+    }
     .icon-home {
       margin: 0px 14px;
       color: #74747f;
@@ -20,7 +23,8 @@
 
     .ul-container {
       display: none;
-      margin: 20px 0px 0px 7px;
+      margin-bottom: 7px;
+      margin-left: 5px;
     }
 
     .visible {

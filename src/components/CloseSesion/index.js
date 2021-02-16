@@ -1,12 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import { connect } from "react-redux";
 import AppActions from "../../redux/reducers/appReducer";
 import { withRouter } from "react-router";
 import imageSesion from "../../images/imageSesion.jpg";
-import "../FontAwesomeIcon";
-import "./closeSesion.scss";
+import { useTranslation } from "react-i18next";
 import classNames from "classnames";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+import "../FontAwesomeIcon";
+import "./closeSesion.scss";
 
 const CloseSesion = ({
   _match,
@@ -17,7 +19,18 @@ const CloseSesion = ({
   setActiveCategory,
   setActiveItem,
 }) => {
-  /* const [activeSesion, setActiveSesion] = useState(false); */
+  const [t, i18n] = useTranslation("global");
+  const [language, setLanguage] = useState(i18n.language);
+
+  const handleChangeLanguage = () => {
+    if (language === "es") {
+      setLanguage("en");
+      i18n.changeLanguage("en");
+    } else {
+      setLanguage("es");
+      i18n.changeLanguage("es");
+    }
+  };
 
   const handleClick = () => {
     setActiveSesion(!activeSesion);
@@ -30,6 +43,17 @@ const CloseSesion = ({
     setActiveItem(null);
     setActiveCategory(null);
   };
+  const nameUser = "Génesis Patiño";
+
+  const name = nameUser.split(" ", 2);
+  const firstName = name[0][0];
+  let lastName = "";
+
+  if (name[1]) {
+    lastName = name[1][0];
+  }
+
+  const wordName = (firstName + lastName).toUpperCase();
 
   return (
     <div className="user-container">
@@ -37,9 +61,10 @@ const CloseSesion = ({
         className={classNames("login-out", { loginActive: activeSesion })}
         onClick={handleClick}
       >
-        <div className="imag">
-          <img className="image-sesion" src={imageSesion} width="50px" alt="" />
-          <span className="user-name">Génesis</span>
+        <div className="logo-name-user">
+          <span className="logo-user">{wordName}</span>
+
+          <span className="user-name">{name[0]}</span>
         </div>
         <span className="user-icon-point">
           <FontAwesomeIcon className="icon" icon="ellipsis-h" />
@@ -49,12 +74,18 @@ const CloseSesion = ({
         className={classNames("deployment-sesion", { active: activeSesion })}
       >
         <div className="information-user">
-          <h3 className="name-sesion">Génesis Patiño</h3>
-          <p className="admi">Administrador</p>
+          <h3 className="name-sesion">{nameUser}</h3>
+          <p className="admi">{t("labels.administrator")}</p>
+        </div>
+        <div className="icon-language" onClick={handleChangeLanguage}>
+          <FontAwesomeIcon className="icon" icon="globe-americas" />
+          <span className="close-span-sesion">
+            {t("labels.change-language")}
+          </span>
         </div>
         <div className="icon-close" onClick={handleCloseSesion}>
           <FontAwesomeIcon className="icon-user" icon="sign-out-alt" />
-          <span className="close-span-sesion">Cerrar sesion</span>
+          <span className="close-span-sesion">{t("labels.sign-off")}</span>
         </div>
       </div>
     </div>

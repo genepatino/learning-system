@@ -1,0 +1,88 @@
+.global-user {
+  display: flex;
+  flex-direction: column;
+  width: 883px;
+  height: 100%;
+  align-items: center;
+  .create-user {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    background: white;
+    align-items: center;
+    border-top: 1px solid #8479793d;
+  }
+  .icon-create-user {
+    color: #396086;
+    font-size: 1.5em;
+    margin: 25px 12px;
+  }
+  .container-information {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    background: #ffffff;
+
+    .user-list {
+      border-collapse: collapse;
+
+      tr {
+        margin: 15px;
+
+        border-top: 1px solid #8479793d;
+      }
+      td {
+        border-top: 1px solid #8479793d;
+      }
+      .user-status {
+        padding-right: 56px;
+      }
+      .user-email {
+        padding: 0 56px;
+      }
+      .user-logo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 24px;
+        height: 23px;
+        border-radius: 50%;
+        border: none;
+        padding: 15px;
+        background-color: #e6e9ef;
+        color: #396086;
+        font-weight: 800;
+        margin: 15px;
+      }
+      .user-icon {
+        cursor: pointer;
+        .rute-edit-users {
+          color: #396086;
+          margin-right: 10px;
+        }
+      }
+    }
+  }
+}
+
+html {
+  --scrollbarBG: #ffffff;
+  --thumbBG: #84797946;
+}
+*::-webkit-scrollbar {
+  width: 11px;
+}
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--thumbBG) var(--scrollbarBG);
+}
+*::-webkit-scrollbar-track {
+  background: var(--scrollbarBG);
+  opacity: 0.2;
+}
+*::-webkit-scrollbar-thumb {
+  background-color: var(--thumbBG);
+  border-radius: 6px;
+  border: 1px solid var(--scrollbarBG);
+}
