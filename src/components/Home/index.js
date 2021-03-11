@@ -2,19 +2,18 @@ import React from "react";
 import { connect } from "react-redux";
 import { withRouter } from "react-router";
 import { Route, Switch, Link } from "react-router-dom";
-import AppActions, { setError } from "../../redux/reducers/appReducer";
-import Categorias from "../Categorias/index";
+import AppActions from "../../redux/reducers/appReducer";
+import Categorias from "../Home/module-components/Categorias/index";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import CloseSesion from "../CloseSesion/index";
+import CloseSesion from "../Home/module-components/CloseSesion/index";
 import NotesView from "../NotesView/index";
 import Users from "../Users/index";
-import CreateUsers from "../CreateUsers/index";
-import AccessUsers from "../accessUsers/index";
+import AccessUsers from "../Users/module-components/accessUsers/index";
 import { useTranslation } from "react-i18next";
 import classNames from "classnames";
 
 import _ from "lodash";
-import "../FontAwesomeIcon";
+import "../utility/components-utility/FontAwesomeIcon/index";
 import "./home.scss";
 
 const Home = ({
@@ -39,33 +38,6 @@ const Home = ({
       }
     });
     return t(title);
-
-    /* for (let menuObject = 0; menuObject < menuData.length - 1; menuObject++) {
-      const item = _.find(menuObject.items, ["id", activeItem]);
-      if (item) {
-        title = item.name;
-        break;
-      }
-    }
-    return title; */
-
-    ///////////////////////////////
-
-    /* if (activeItem !== null) {
-      return activeTitleItem;
-    } */
-
-    ///////////////////////////
-    /* let header = "";
-
-    menuData.forEach((element) => {
-      element.items.forEach((title) => {
-        if (activeItem === title.id) {
-          header = title.name;
-        }
-      });
-    });
-    return header; */
   };
 
   const handleClickLogo = () => {
@@ -109,24 +81,17 @@ const Home = ({
           </div>
         )}
 
-        {activeItem !== null && (
-          <div className="home-content">
-            <Switch location={location}>
-              <Route exact path="/admin/notes" component={NotesView} />
-            </Switch>
-            <Switch location={location}>
-              <Route exact path="/admin/users" component={Users} />
-            </Switch>
-          </div>
-        )}
-
-        <Switch location={location}>
-          <Route exact path="/admin/accessUsers/:id" component={AccessUsers} />
-        </Switch>
-
-        <Switch location={location}>
-          <Route exact path="/admin/createUser/" component={CreateUsers} />
-        </Switch>
+        <div className="home-content">
+          <Switch location={location}>
+            <Route exact path="/admin/notes" component={NotesView} />
+            <Route exact path="/admin/users" component={Users} />
+            <Route
+              exact
+              path="/admin/accessUsers/:id"
+              component={AccessUsers}
+            />
+          </Switch>
+        </div>
       </div>
     </div>
   );

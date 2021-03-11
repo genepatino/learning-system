@@ -46,7 +46,7 @@
         .remember {
           display: flex;
           justify-content: space-between;
-
+          margin-bottom: 20px;
           align-items: center;
 
           .label-checkbox {
@@ -71,7 +71,7 @@
         .footer-container {
           border-top: 1px solid #eee;
           .footer-login {
-            margin-top: 14px;
+            margin-top: 6px;
             font-size: 14px;
             .inscribete {
               margin-right: 2px;

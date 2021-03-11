@@ -1,0 +1,53 @@
+{
+  "titles": {
+    "h2-title-login": "Log in",
+    "category-Resourses": "Recursos"
+  },
+  "labels": {
+    "name": "Name",
+    "email": "Email",
+    "status": "Active or inactive",
+    "invalid-email": "Invalid email",
+    "password": "Password",
+    "stay-connected": "Stay connected",
+    "forgot-password": "¿Did you forget your password?",
+    "new-organization": "¿Are you a new organization?",
+    "log-in": "Log in",
+    "sign-up": "Sign up here",
+    "administrator": "Administrator",
+    "sign-off": "Sign off",
+    "change-language": "Change language (Spanish)",
+    "add-note": "Add a note",
+    "create-user": "Create user",
+    "field-required": "Required field",
+    "add-user": "Add user",
+    "enter-name": "Enter name",
+    "enter-email": "Enter email",
+    "enter-gender": "Enter gender",
+    "enter-status": "Enter status",
+    "authentication-error": "Authentication error",
+    "errors-message": "Errors have been presented in the following information fields:",
+    "error-message": "Errors have occurred in the following information field:",
+    "error-page": "Oow, it looks like errors have been filed with your request",
+    "success-message": "The new user has been created perfectly",
+    "status-female": "Female",
+    "status-male": "Male",
+    "select": "Select",
+    "option-active": "Active",
+    "option-inactive": "Inactive",
+    "return": "Return page"
+  },
+  "menu": {
+    "resourses": "Resourses",
+    "users": "Users",
+    "finance": "Finance",
+    "setting": "Setting",
+    "audit": "Audit",
+    "notes": "Notes",
+    "people": "People",
+    "service": "Service",
+    "conveyors": "Conveyors",
+    "user-list": "User list",
+    "item": "Item"
+  }
+}

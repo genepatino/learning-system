@@ -13,6 +13,8 @@ const { Types, Creators } = createActions({
   setActiveTitleItem: ["activeTitleItem"],
   setLanguage: ["language"],
   setError: ["error"],
+  setModal: ["openModal"],
+  setLoader: ["loader"],
 });
 
 export const AppTypes = Types;
@@ -25,9 +27,10 @@ export const INITIAL_STATE = Immutable({
   activeSesion: false,
   activeItem: null,
   activeTitleItem: null,
+  openModal: false,
+  loader: true,
   users: [],
-  error: false,
-  editUser: [],
+  editUser: {},
   menuData: [
     {
       id: 0,
@@ -135,7 +138,9 @@ export const setEditUser = (state, { editUser }) => state.merge({ editUser });
 export const setActiveTitleItem = (state, { activeTitleItem }) =>
   state.merge({ activeTitleItem });
 
-export const setError = (state, { error }) => state.merge({ error });
+export const setModal = (state, { openModal }) => state.merge({ openModal });
+
+export const setLoader = (state, { loader }) => state.merge({ loader });
 
 /* ------------- Hookup Reducers To Types ------------- */
 
@@ -145,7 +150,8 @@ export const reducer = createReducer(INITIAL_STATE, {
   [Types.SET_MENU_DATA]: setMenuData,
   [Types.SET_ACTIVE_ITEM]: setActiveItem,
   [Types.SET_USERS]: setUsers,
-  [Types.SET_ERROR]: setError,
   [Types.SET_EDIT_USER]: setEditUser,
   [Types.SET_ACTIVE_TITLE_ITEM]: setActiveTitleItem,
+  [Types.SET_MODAL]: setModal,
+  [Types.SET_LOADER]: setLoader,
 });

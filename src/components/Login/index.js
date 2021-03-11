@@ -5,18 +5,17 @@ import { connect } from "react-redux";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Checkbox from "rc-checkbox";
 import "rc-checkbox/assets/index.css";
-import Inputs from "../Inputs/index";
-import Button from "../Button/index";
+import Inputs from "../utility/components-utility/Inputs/index";
+import Button from "../utility/components-utility/Button/index";
 import LoginActions from "../../redux/reducers/loginReducer";
 import imageFrom from "../../images/imagenCentral.png";
 import { useTranslation } from "react-i18next";
+import Cookies from "universal-cookie";
 
-import "../FontAwesomeIcon";
+import "../utility/components-utility/FontAwesomeIcon/index";
 import "./login.scss";
 
 const Login = ({
-  _match,
-  _location,
   history,
   email,
   setEmail,
@@ -46,7 +45,15 @@ const Login = ({
         "Los datos ingresados no son validos o faltan campos por rellenar"
       );
     } else if (emailUser === email && passwordUser === password) {
-      window.localStorage.setItem("USER_KEY", "0246");
+      const cookies = new Cookies();
+      cookies.set(
+        "accessToken",
+        "Bearer 6f2859c486ff0b618a75d36512e09b61671b00e3b40fc6a9ab305a0c04cb6b4c",
+        {
+          path: "/",
+          maxAge: 604800,
+        }
+      );
       history.push("/admin");
       setError("");
     } else {
@@ -111,7 +118,7 @@ const Login = ({
                   </Link>
                 </div>
               </div>
-              <Button button={t("labels.log-on")} />
+              <Button button={t("labels.log-in")} icon="" />
 
               <footer className="footer-container">
                 <div className="footer-login">
