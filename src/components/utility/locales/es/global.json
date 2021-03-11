@@ -1,0 +1,53 @@
+{
+  "titles": {
+    "h2-title-login": "Iniciar Sesión",
+    "category-Resourses": "Recursos"
+  },
+  "labels": {
+    "name": "Nombre",
+    "email": "Correo electrónico",
+    "status": "Activo o inactivo",
+    "invalid-email": "Correo eletrónico invalido",
+    "password": "Contraseña",
+    "stay-connected": "Mantenerte conectado",
+    "forgot-password": "¿Olvidaste tu contraseña?",
+    "new-organization": "¿Eres una organización nueva?",
+    "log-in": "Iniciar sesión",
+    "sign-up": "Inscríbete aquí",
+    "administrator": "Administrador",
+    "sign-off": "Cerrar Sesión",
+    "change-language": "Cambiar idioma (Inglés)",
+    "add-note": "Agrega una nota",
+    "create-user": "Crear usuario",
+    "field-required": "Campo requerido",
+    "add-user": "Agregar usuario",
+    "enter-name": "Ingrese nombre",
+    "enter-email": "Ingrese correo electrónico",
+    "enter-gender": "Ingrese género",
+    "enter-status": "Ingrese estado",
+    "authentication-error": "Error de autenticación",
+    "errors-message": "Se han presentado errores en los siguientes campos de información:",
+    "error-message": "Errors have occurred in the following information field:",
+    "error-page": "Vaya, parece que se han presentado errores con su solicitud",
+    "success-message": "El nuevo usuario se ha creado perfectamente",
+    "status-female": "Femenino",
+    "status-male": "Masculino",
+    "select": "Seleccione",
+    "option-active": "Activo",
+    "option-inactive": "Inactivo",
+    "return": "Regresar"
+  },
+  "menu": {
+    "resourses": "Recursos",
+    "users": "Usuarios",
+    "finance": "Finanzas",
+    "setting": "Ajustes",
+    "audit": "Auditoría",
+    "notes": "Notas",
+    "people": "Personas",
+    "service": "Servicio",
+    "conveyors": "Transportadoras",
+    "user-list": "Lista de Usurios",
+    "item": "Articulo"
+  }
+}

@@ -8,6 +8,13 @@ const { Types, Creators } = createActions({
   setActiveSesion: ["activeSesion"],
   setMenuData: ["menuData"],
   setActiveItem: ["activeItem"],
+  setUsers: ["users"],
+  setEditUser: ["editUser"],
+  setActiveTitleItem: ["activeTitleItem"],
+  setLanguage: ["language"],
+  setError: ["error"],
+  setModal: ["openModal"],
+  setLoader: ["loader"],
 });
 
 export const AppTypes = Types;
@@ -19,49 +26,54 @@ export const INITIAL_STATE = Immutable({
   activeCategory: null,
   activeSesion: false,
   activeItem: null,
+  activeTitleItem: null,
+  openModal: false,
+  loader: true,
+  users: [],
+  editUser: {},
   menuData: [
     {
       id: 0,
       icon: "cubes",
-      span: "Recursos",
+      span: "menu.resourses",
       items: [
         {
           id: 0,
-          name: "Notas",
+          name: "menu.notes",
           rute: "/admin/notes",
         },
         {
           id: 1,
-          name: "Personas",
+          name: "menu.people",
           rute: "/admin",
         },
         {
           id: 2,
-          name: "Servicio",
+          name: "menu.service",
           rute: "/admin",
         },
         {
           id: 3,
-          name: "Transportadoras",
+          name: "menu.conveyors",
           rute: "/admin",
         },
       ],
     },
     {
       id: 1,
-      icon: "dolly",
-      span: "Logística",
+      icon: "users",
+      span: "menu.users",
       items: [
-        { id: 4, name: "item 1", rute: "/admin" },
-        { id: 5, name: "item 2", rute: "/admin" },
+        { id: 4, name: "menu.user-list", rute: "/admin/users" },
+        { id: 5, name: "menu.item", rute: "/admin" },
         {
           id: 6,
-          name: "item 3",
+          name: "menu.item",
           rute: "/admin",
         },
         {
           id: 7,
-          name: "item 4",
+          name: "menu.item",
           rute: "/admin",
         },
       ],
@@ -69,38 +81,38 @@ export const INITIAL_STATE = Immutable({
     {
       id: 2,
       icon: "hand-holding-usd",
-      span: "Finanzas",
+      span: "menu.finance",
       items: [
         {
           id: 8,
-          name: "item 1",
+          name: "menu.item",
           rute: "/admin",
         },
-        { id: 9, name: "item 2", rute: "/admin" },
-        { id: 10, name: "item 3", rute: "/admin" },
-        { id: 11, name: "item 4", rute: "/admin" },
+        { id: 9, name: "menu.item", rute: "/admin" },
+        { id: 10, name: "menu.item", rute: "/admin" },
+        { id: 11, name: "menu.item", rute: "/admin" },
       ],
     },
     {
       id: 3,
       icon: "tools",
-      span: "Configuración",
+      span: "menu.setting",
       items: [
-        { id: 12, name: "item 1", rute: "/admin" },
-        { id: 13, name: "item 2", rute: "/admin" },
-        { id: 14, name: "item 3", rute: "/admin" },
-        { id: 15, name: "item 4", rute: "/admin" },
+        { id: 12, name: "menu.item", rute: "/admin" },
+        { id: 13, name: "menu.item", rute: "/admin" },
+        { id: 14, name: "menu.item", rute: "/admin" },
+        { id: 15, name: "menu.item", rute: "/admin" },
       ],
     },
     {
       id: 4,
       icon: "edit",
-      span: "Auditoría",
+      span: "menu.audit",
       items: [
-        { id: 16, name: "item 1", rute: "/admin" },
-        { id: 17, name: "item 2", rute: "/admin" },
-        { id: 18, name: "item 3", rute: "/admin" },
-        { id: 19, name: "item 4", rute: "/admin" },
+        { id: 16, name: "menu.item", rute: "/admin" },
+        { id: 17, name: "menu.item", rute: "/admin" },
+        { id: 18, name: "menu.item", rute: "/admin" },
+        { id: 19, name: "menu.item", rute: "/admin" },
       ],
     },
   ],
@@ -119,6 +131,17 @@ export const setMenuData = (state, { menuData }) => state.merge({ menuData });
 export const setActiveItem = (state, { activeItem }) =>
   state.merge({ activeItem });
 
+export const setUsers = (state, { users }) => state.merge({ users });
+
+export const setEditUser = (state, { editUser }) => state.merge({ editUser });
+
+export const setActiveTitleItem = (state, { activeTitleItem }) =>
+  state.merge({ activeTitleItem });
+
+export const setModal = (state, { openModal }) => state.merge({ openModal });
+
+export const setLoader = (state, { loader }) => state.merge({ loader });
+
 /* ------------- Hookup Reducers To Types ------------- */
 
 export const reducer = createReducer(INITIAL_STATE, {
@@ -126,4 +149,9 @@ export const reducer = createReducer(INITIAL_STATE, {
   [Types.SET_ACTIVE_SESION]: setActiveSesion,
   [Types.SET_MENU_DATA]: setMenuData,
   [Types.SET_ACTIVE_ITEM]: setActiveItem,
+  [Types.SET_USERS]: setUsers,
+  [Types.SET_EDIT_USER]: setEditUser,
+  [Types.SET_ACTIVE_TITLE_ITEM]: setActiveTitleItem,
+  [Types.SET_MODAL]: setModal,
+  [Types.SET_LOADER]: setLoader,
 });

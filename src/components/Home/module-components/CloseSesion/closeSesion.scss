@@ -1,0 +1,113 @@
+.login-out {
+  display: flex;
+  cursor: pointer;
+  justify-content: space-between;
+  margin: 8px;
+  border-radius: 4px;
+  align-items: center;
+  .logo-name-user {
+    display: flex;
+    padding: 16px;
+    align-items: center;
+    .logo-user {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 42px;
+      height: 38px;
+      font-size: 19px;
+      background-color: #e6e9ef;
+      color: #396086;
+      border-radius: 50%;
+      font-weight: 800;
+    }
+    .user-name {
+      margin-left: 18px;
+      color: #74747f;
+      font-weight: bold;
+    }
+  }
+  .user-icon-point {
+    .icon {
+      color: #74747f;
+      margin-top: 8px;
+      padding: 8px;
+    }
+  }
+}
+
+.deployment-sesion {
+  background: white;
+  position: absolute;
+  padding: 4px;
+  border-radius: 6px;
+  margin-top: -202px;
+  margin-left: 187px;
+  display: none;
+  .information-user {
+    margin: 10px 12px;
+    border-bottom: 1px solid #eee;
+    .name-sesion {
+      color: black;
+      margin: 0px;
+    }
+    .admi {
+      color: black;
+    }
+  }
+  .icon-close {
+    margin: 12px;
+    cursor: pointer;
+    .icon-user {
+      color: red;
+      margin-right: 10px;
+    }
+    .close-span-sesion {
+      color: black;
+    }
+  }
+
+  .icon-language {
+    margin: 10px;
+    cursor: pointer;
+    .icon {
+      color: red;
+      margin-right: 10px;
+    }
+    .close-span-sesion {
+      color: black;
+    }
+  }
+}
+
+.active {
+  display: block;
+}
+
+.login-out:hover {
+  background-color: #10101a;
+  .logo-name-user {
+    .user-name {
+      color: white;
+    }
+  }
+  .user-icon-point {
+    .icon {
+      color: white;
+    }
+  }
+}
+
+.loginActive {
+  background-color: #10101a;
+  .logo-name-user {
+    .user-name {
+      color: white;
+    }
+  }
+  .user-icon-point {
+    .icon {
+      color: white;
+    }
+  }
+}

@@ -5,16 +5,17 @@ import { connect } from "react-redux";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Checkbox from "rc-checkbox";
 import "rc-checkbox/assets/index.css";
-import Inputs from "../Inputs/index";
-import Button from "../Buttom/index";
+import Inputs from "../utility/components-utility/Inputs/index";
+import Button from "../utility/components-utility/Button/index";
 import LoginActions from "../../redux/reducers/loginReducer";
-import "../FontAwesomeIcon";
-import "./login.scss";
 import imageFrom from "../../images/imagenCentral.png";
+import { useTranslation } from "react-i18next";
+import Cookies from "universal-cookie";
+
+import "../utility/components-utility/FontAwesomeIcon/index";
+import "./login.scss";
 
 const Login = ({
-  _match,
-  _location,
   history,
   email,
   setEmail,
@@ -23,6 +24,8 @@ const Login = ({
   error,
   setError,
 }) => {
+  const [t] = useTranslation("global");
+
   const expressions = {
     regexName: /^[A-z]\D{3,30}/g,
     regexEmail: /^[a-z][a-z0-9!"#$%&'()*+,\-./:;<=>?[\\\]^_`{|}~]+@[a-z]+\.[a-z]+$/g,
@@ -42,7 +45,15 @@ const Login = ({
         "Los datos ingresados no son validos o faltan campos por rellenar"
       );
     } else if (emailUser === email && passwordUser === password) {
-      window.localStorage.setItem("USER_KEY", "0246");
+      const cookies = new Cookies();
+      cookies.set(
+        "accessToken",
+        "Bearer 6f2859c486ff0b618a75d36512e09b61671b00e3b40fc6a9ab305a0c04cb6b4c",
+        {
+          path: "/",
+          maxAge: 604800,
+        }
+      );
       history.push("/admin");
       setError("");
     } else {
@@ -60,7 +71,7 @@ const Login = ({
         <div className="login-form">
           <form onSubmit={handleSubmit}>
             <div className="form">
-              <h2 className="h2-title">Iniciar sesión</h2>
+              <h2 className="h2-title">{t("titles.h2-title-login")}</h2>
 
               {error !== "" && (
                 <div className="error">
@@ -75,7 +86,7 @@ const Login = ({
               )}
 
               <Inputs
-                label="Correo electrónico"
+                label={t("labels.email")}
                 type="email"
                 name="email"
                 value={email}
@@ -84,7 +95,7 @@ const Login = ({
               />
 
               <Inputs
-                label="Contraseña"
+                label={t("labels.password")}
                 type="password"
                 name="password"
                 value={password}
@@ -96,25 +107,27 @@ const Login = ({
                 <div className="input-remenber">
                   <label className="label-checkbox">
                     <Checkbox className="checkbox-style" />
-                    <span className="connected">Mantenerme conectado</span>
+                    <span className="connected">
+                      {t("labels.stay-connected")}
+                    </span>
                   </label>
                 </div>
                 <div className="link-remember">
                   <Link className="link" to="/">
-                    ¿Olvidaste tu contraseña?
+                    {t("labels.forgot-password")}
                   </Link>
                 </div>
               </div>
-              <Button button="Iniciar sesión" />
+              <Button button={t("labels.log-in")} icon="" />
 
               <footer className="footer-container">
                 <div className="footer-login">
                   <span className="inscribete">
-                    ¿Eres una organización nueva?
+                    {t("labels.new-organization")}
                   </span>
 
                   <Link className="link-register" to="/">
-                    Inscríbete aquí
+                    {t("labels.sign-up")}
                   </Link>
                 </div>
               </footer>
