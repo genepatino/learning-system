@@ -8,7 +8,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import CloseSesion from "../Home/module-components/CloseSesion/index";
 import NotesView from "../NotesView/index";
 import Users from "../Users/index";
-import AccessUsers from "../Users/module-components/accessUsers/index";
+/* import AccessUsers from "../Users/module-components/AccessUsers/index"; */
 import { useTranslation } from "react-i18next";
 import classNames from "classnames";
 
@@ -85,11 +85,6 @@ const Home = ({
           <Switch location={location}>
             <Route exact path="/admin/notes" component={NotesView} />
             <Route exact path="/admin/users" component={Users} />
-            <Route
-              exact
-              path="/admin/accessUsers/:id"
-              component={AccessUsers}
-            />
           </Switch>
         </div>
       </div>

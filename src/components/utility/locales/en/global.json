@@ -35,7 +35,9 @@
     "select": "Select",
     "option-active": "Active",
     "option-inactive": "Inactive",
-    "return": "Return page"
+    "return": "Return page",
+    "edit-user": "Edit user",
+    "update-user": "Update user"
   },
   "menu": {
     "resourses": "Resourses",

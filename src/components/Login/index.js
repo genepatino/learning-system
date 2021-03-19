@@ -8,7 +8,7 @@ import "rc-checkbox/assets/index.css";
 import Inputs from "../utility/components-utility/Inputs/index";
 import Button from "../utility/components-utility/Button/index";
 import LoginActions from "../../redux/reducers/loginReducer";
-import imageFrom from "../../images/imagenCentral.png";
+import imageFrom from "../../images/fondo1.png";
 import { useTranslation } from "react-i18next";
 import Cookies from "universal-cookie";
 
@@ -51,7 +51,7 @@ const Login = ({
         "Bearer 6f2859c486ff0b618a75d36512e09b61671b00e3b40fc6a9ab305a0c04cb6b4c",
         {
           path: "/",
-          maxAge: 604800,
+          expires: new Date("Wed, 22 Mar 2021 10:30:00 GMT"),
         }
       );
       history.push("/admin");

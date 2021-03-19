@@ -1,14 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
 import { withRouter } from "react-router";
-import NoteActions from "../..//redux/reducers/noteReducer";
+import NoteActions from "../../redux/reducers/noteReducer";
+import AppActions from "../../redux/reducers/appReducer";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useTranslation } from "react-i18next";
 import Notes from "../NotesView/module-components/Notes/index";
 import "../utility/components-utility/FontAwesomeIcon/index";
 import "./notesView.scss";
 
-const NotesView = ({ notesData, appendNoteData }) => {
+const NotesView = ({ notesData, appendNoteData, setActiveItem }) => {
   const [t] = useTranslation("global");
   const [noteTitle, setNoteTitle] = useState("");
 
@@ -29,6 +30,10 @@ const NotesView = ({ notesData, appendNoteData }) => {
       setNoteTitle("");
     }
   };
+
+  useEffect(() => {
+    setActiveItem(0);
+  }, [setActiveItem]);
 
   return (
     <div className="notes-container">
@@ -59,6 +64,8 @@ const mapDispatchToProps = (dispatch) => {
   return {
     appendNoteData: (notesDataValue) =>
       dispatch(NoteActions.appendNoteData(notesDataValue)),
+    setActiveItem: (activeItem) =>
+      dispatch(AppActions.setActiveItem(activeItem)),
   };
 };
 
