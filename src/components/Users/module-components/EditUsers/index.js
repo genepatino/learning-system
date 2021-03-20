@@ -96,7 +96,7 @@ const EditUsers = ({ editUser, setOpenModal, getInformation }) => {
         {({ errors, touched }) => (
           <Form className="form">
             <div className="title-input-bottom">
-              <h2 className="h2-title">Editar Usuario (agg trad)</h2>
+              <h2 className="h2-title">{t("labels.edit-user")}</h2>
               <label className="label">{t("labels.enter-name")}</label>
               <Field
                 name="name"
@@ -145,7 +145,7 @@ const EditUsers = ({ editUser, setOpenModal, getInformation }) => {
             </div>
             <div className="button">
               <button type="submit" className="button-two">
-                Actualizar(agg trad.)
+                {t("labels.update-user")}
               </button>
             </div>
           </Form>
