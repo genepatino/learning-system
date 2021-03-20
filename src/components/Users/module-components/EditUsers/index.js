@@ -1,42 +1,39 @@
 import React from "react";
-import { connect } from "react-redux";
 import AppActions from "../../../../redux/reducers/appReducer";
-import { useTranslation } from "react-i18next";
+import { connect } from "react-redux";
 import { Formik, Form, ErrorMessage, Field } from "formik";
 import * as Yup from "yup";
+import { useTranslation } from "react-i18next";
+import Cookies from "universal-cookie";
 import apiUrl from "../../../utility/constantes/apiUrl";
+import Select from "../../../utility/components-utility/Select/index";
 import notification from "../../../utility/constantes/notification-message";
 import { store } from "react-notifications-component";
-import RadioButton from "../../../utility/components-utility/Radio-Button/index";
+
 import classNames from "classnames";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Select from "../../../utility/components-utility/Select/index";
-import Cookies from "universal-cookie";
-import _ from "lodash";
+import "./editUsers.scss";
 
-import "animate.css";
-import "./createUsers.scss";
-
-const CreateUsers = ({ setOpenModal, getInformation }) => {
+const EditUsers = ({ editUser, setOpenModal, getInformation }) => {
   const [t] = useTranslation("global");
 
   const cookies = new Cookies();
 
-  const postUser = async (formData) => {
+  const editUsersList = async (editSingleUser) => {
     try {
-      const options = {
-        method: "POST",
+      const configObject = {
+        method: "PATCH",
         headers: {
           Authorization: cookies.get("accessToken"),
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify(editSingleUser),
       };
-      const response = await fetch(`${apiUrl}/users`, options);
+      const response = await fetch(
+        `${apiUrl}/users/${editUser.id}`,
+        configObject
+      );
       const data = await response.json();
-
-      let errField = [];
-      let message;
 
       switch (data.code) {
         case 401:
@@ -48,41 +45,24 @@ const CreateUsers = ({ setOpenModal, getInformation }) => {
           });
           break;
 
-        case 422:
-          _.find(data.data, function (err) {
-            errField.push(err.field.toUpperCase() + ": " + err.message + ".");
-            if (errField.length > 1) {
-              message = `${t("labels.errors-message")} \n ${errField.join(
-                " "
-              )}`;
-            } else {
-              message = `${t("labels.error-message")} ${errField}`;
-            }
-          });
-
-          store.addNotification({
-            ...notification,
-            title: "Opps!",
-            message: message,
-            type: "danger",
-          });
-          break;
         case 200:
         case 201:
           store.addNotification({
             ...notification,
             title: "Wonderful!!!",
-            message: t("labels.success-message"),
+            message: "su usuario ha sido actualizado con éxito (trad)",
             type: "success",
           });
           setOpenModal(false);
           getInformation();
+
           break;
 
         default:
           break;
       }
     } catch (err) {
+      console.error(err);
       store.addNotification({
         ...notification,
         title: "Oh no!",
@@ -97,23 +77,26 @@ const CreateUsers = ({ setOpenModal, getInformation }) => {
     email: Yup.string()
       .email("invalid email")
       .required(t("labels.field-required")),
-    gender: Yup.string().required(t("labels.field-required")),
     status: Yup.string().required(t("labels.field-required")),
   });
 
   return (
     <div className="form-container">
       <Formik
-        initialValues={{ name: "", email: "", gender: "", status: "" }}
+        initialValues={{
+          name: editUser.name,
+          email: editUser.email,
+          status: editUser.status,
+        }}
         validationSchema={formSchema}
         onSubmit={(formData) => {
-          postUser(formData);
+          editUsersList(formData);
         }}
       >
         {({ errors, touched }) => (
           <Form className="form">
             <div className="title-input-bottom">
-              <h2 className="h2-title">{t("labels.create-user")}</h2>
+              <h2 className="h2-title">Editar Usuario (agg trad)</h2>
               <label className="label">{t("labels.enter-name")}</label>
               <Field
                 name="name"
@@ -159,24 +142,10 @@ const CreateUsers = ({ setOpenModal, getInformation }) => {
                 name="status"
                 className="status-error"
               />
-
-              <label className="label">{t("labels.enter-gender")}</label>
-
-              <div className="container-gender ">
-                <RadioButton label={t("labels.status-female")} value="Female" />
-                <RadioButton label={t("labels.status-male")} value="Male" />
-              </div>
-
-              <ErrorMessage
-                component="div"
-                name="gender"
-                className="gender-error"
-              />
             </div>
-
             <div className="button">
               <button type="submit" className="button-two">
-                {t("labels.add-user")}
+                Actualizar(agg trad.)
               </button>
             </div>
           </Form>
@@ -186,10 +155,16 @@ const CreateUsers = ({ setOpenModal, getInformation }) => {
   );
 };
 
+const mapStateToProps = (state) => {
+  return {
+    editUser: state.appReducer.editUser,
+  };
+};
+
 const mapDispatchToProps = (dispatch) => {
   return {
     setOpenModal: (openModal) => dispatch(AppActions.setOpenModal(openModal)),
   };
 };
 
-export default connect(null, mapDispatchToProps)(CreateUsers);
+export default connect(mapStateToProps, mapDispatchToProps)(EditUsers);

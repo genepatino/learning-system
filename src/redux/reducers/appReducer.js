@@ -13,7 +13,7 @@ const { Types, Creators } = createActions({
   setActiveTitleItem: ["activeTitleItem"],
   setLanguage: ["language"],
   setError: ["error"],
-  setModal: ["openModal"],
+  setOpenModal: ["openModal"],
   setLoader: ["loader"],
 });
 
@@ -138,7 +138,8 @@ export const setEditUser = (state, { editUser }) => state.merge({ editUser });
 export const setActiveTitleItem = (state, { activeTitleItem }) =>
   state.merge({ activeTitleItem });
 
-export const setModal = (state, { openModal }) => state.merge({ openModal });
+export const setOpenModal = (state, { openModal }) =>
+  state.merge({ openModal });
 
 export const setLoader = (state, { loader }) => state.merge({ loader });
 
@@ -152,6 +153,6 @@ export const reducer = createReducer(INITIAL_STATE, {
   [Types.SET_USERS]: setUsers,
   [Types.SET_EDIT_USER]: setEditUser,
   [Types.SET_ACTIVE_TITLE_ITEM]: setActiveTitleItem,
-  [Types.SET_MODAL]: setModal,
+  [Types.SET_OPEN_MODAL]: setOpenModal,
   [Types.SET_LOADER]: setLoader,
 });
