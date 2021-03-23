@@ -2,7 +2,7 @@ import React from "react";
 import { Field } from "formik";
 import "./radioButton.scss";
 
-const RadioButton = ({ value, label }) => {
+const RadioButton = ({ value, label, checked }) => {
   return (
     <div role="group" aria-labelledby="my-radio-group" className="container-button">
       <label className=/* "container-radio-button"  */"radio">
@@ -10,8 +10,10 @@ const RadioButton = ({ value, label }) => {
           type="radio"
           name="gender"
           value={value}
-          className=/* "radio-button" */"hidden"
+          className="hidden"
+          
         />
+      
       <span className="label"></span>
         {label}
       </label>

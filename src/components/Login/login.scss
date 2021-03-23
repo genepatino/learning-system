@@ -12,13 +12,14 @@
     height: 475px;
     .container-image {
       justify-content: center;
-      width: 300px;
+      width: 325px;
       display: flex;
       align-items: center;
       background-color: #18172a;
       border-radius: 6px 0px 0px 6px;
       .imageFrom {
-        width: 100%;
+        width: 110%;
+        height: 200px;
       }
     }
     .login-form {

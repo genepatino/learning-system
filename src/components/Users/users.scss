@@ -43,11 +43,14 @@
         td {
           border-top: 1px solid #8479793d;
         }
+        .user-name {
+          padding: 0 15px;
+        }
         .user-status {
           padding-right: 56px;
         }
         .user-email {
-          padding: 0 56px;
+          padding: 0 15px;
         }
         .user-logo {
           display: flex;
@@ -65,9 +68,11 @@
         }
         .user-icon {
           cursor: pointer;
+
           .rute-edit-users {
             color: #396086;
             margin-right: 10px;
+            padding: 5px;
           }
         }
       }
