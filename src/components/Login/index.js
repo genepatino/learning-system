@@ -36,7 +36,6 @@ const Login = ({
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("me estas llamando desde el button?");
 
     if (
       !expressions.regexEmail.test(email) ||
