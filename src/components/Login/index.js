@@ -36,6 +36,7 @@ const Login = ({
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    console.log("me estas llamando desde el button?");
 
     if (
       !expressions.regexEmail.test(email) ||
@@ -51,7 +52,7 @@ const Login = ({
         "Bearer 6f2859c486ff0b618a75d36512e09b61671b00e3b40fc6a9ab305a0c04cb6b4c",
         {
           path: "/",
-          expires: new Date("Wed, 22 Mar 2021 10:30:00 GMT"),
+          expires: new Date("Wed, 26 Mar 2021 10:30:00 GMT"),
         }
       );
       history.push("/admin");
