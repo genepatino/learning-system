@@ -31,7 +31,13 @@
       flex-direction: column;
       .form {
         padding: 16px 50px;
-
+        .h2-title {
+          margin-top: 0px;
+          margin-bottom: 34px;
+        }
+        .h2-title-error {
+          margin-bottom: 20px;
+        }
         .error {
           margin-bottom: 25px;
           .icon-error {
@@ -69,8 +75,12 @@
             }
           }
         }
+        .remember-error {
+          margin-bottom: 0;
+        }
         .footer-container {
           border-top: 1px solid #eee;
+          margin-top: 30px;
           .footer-login {
             margin-top: 6px;
             font-size: 14px;
@@ -86,6 +96,9 @@
               font-weight: 900;
             }
           }
+        }
+        .footer-container-error {
+          margin-top: 14px;
         }
       }
     }
