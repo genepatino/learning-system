@@ -1,11 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
-import { store } from "./redux/store";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 import { I18nextProvider } from "react-i18next";
 import i18next from "i18next";
+import { store, persistor } from "./redux/store";
+import { PersistGate } from "redux-persist/integration/react";
 
 import global_es from "./components/utility/locales/es/global.json";
 import global_en from "./components/utility/locales/en/global.json";
@@ -25,7 +26,9 @@ i18next.init({
 
 const AppContainer = () => (
   <Provider store={store}>
-    <App />
+    <PersistGate loading={null} persistor={persistor}>
+      <App />
+    </PersistGate>
   </Provider>
 );
 
