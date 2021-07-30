@@ -42,7 +42,7 @@ const Users = ({
 
   const getInformation = useCallback(async () => {
     try {
-      const response = await fetch(`${apiUrl}/users`);
+      const response = await fetch(`${apiUrl.apiUrlUser}/users`);
       const data = await response.json();
 
       setUsers(data.data);

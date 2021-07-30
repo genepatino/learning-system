@@ -80,13 +80,13 @@ export const INITIAL_STATE = Immutable({
     },
     {
       id: 2,
-      icon: "hand-holding-usd",
-      span: "menu.finance",
+      icon: "route",
+      span: "menu.routes",
       items: [
         {
           id: 8,
-          name: "menu.item",
-          rute: "/admin",
+          name: "menu.directions",
+          rute: "/admin/directions",
         },
         { id: 9, name: "menu.item", rute: "/admin" },
         { id: 10, name: "menu.item", rute: "/admin" },

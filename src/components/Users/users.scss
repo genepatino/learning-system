@@ -1,7 +1,6 @@
 .global-user {
   display: flex;
   flex-direction: column;
-  height: 100%;
   align-items: center;
   width: 100%;
 
@@ -11,7 +10,8 @@
     flex-direction: column;
     overflow-y: hidden;
     background: #ffffff;
-    margin: 50px auto;
+    /* margin: 50px auto; */
+    height: 760px;
     .container-button {
       display: flex;
       justify-content: flex-end;

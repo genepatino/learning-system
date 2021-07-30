@@ -49,7 +49,7 @@ const Login = ({
       const cookies = new Cookies();
       cookies.set(
         "accessToken",
-        "Bearer 6f2859c486ff0b618a75d36512e09b61671b00e3b40fc6a9ab305a0c04cb6b4c",
+        "Bearer 60e77d6ad756a82358b8fbfa5c2b83809e220132927ccae4c70dd89b9acd6279",
         {
           path: "/",
           expires: new Date("Tue, 03 May 2022 10:30:00 GMT"),

@@ -1,7 +1,8 @@
 {
   "titles": {
     "h2-title-login": "Log in",
-    "category-Resourses": "Recursos"
+    "origin-address": "Enter your origin address",
+    "destination-address": "Enter your destination address"
   },
   "labels": {
     "name": "Name",
@@ -30,6 +31,7 @@
     "error-message": "Errors have occurred in the following information field:",
     "error-page": "Oow, it looks like errors have been filed with your request",
     "success-message": "The new user has been created perfectly",
+    "success-update-user": "Username has been updated successfully",
     "status-female": "Female",
     "status-male": "Male",
     "select": "Select",
@@ -37,12 +39,13 @@
     "option-inactive": "Inactive",
     "return": "Return page",
     "edit-user": "Edit user",
-    "update-user": "Update user"
+    "update-user": "Update user",
+    "route-management": "Route management"
   },
   "menu": {
     "resourses": "Resourses",
     "users": "Users",
-    "finance": "Finance",
+    "routes": "Routes",
     "setting": "Setting",
     "audit": "Audit",
     "notes": "Notes",
@@ -50,6 +53,7 @@
     "service": "Service",
     "conveyors": "Conveyors",
     "user-list": "User list",
+    "directions": "Directions",
     "item": "Item"
   }
 }
