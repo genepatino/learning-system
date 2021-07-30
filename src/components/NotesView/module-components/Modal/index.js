@@ -113,6 +113,7 @@ const Modal = ({
                       </div>
                     );
                   }
+                  return null;
                 })}
               </div>
               <div className="input-checkbox-modal">
@@ -176,6 +177,7 @@ const Modal = ({
                       </div>
                     );
                   }
+                  return null;
                 })}
               </div>
             </div>

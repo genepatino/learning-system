@@ -22,7 +22,7 @@ const EditUsers = ({ editUser, setOpenModal, getInformation }) => {
   const editUsersList = async (editSingleUser) => {
     try {
       const configObject = {
-        method: "PATCH",
+        method: "PUT",
         headers: {
           Authorization: cookies.get("accessToken"),
           "Content-Type": "application/json",
@@ -30,7 +30,7 @@ const EditUsers = ({ editUser, setOpenModal, getInformation }) => {
         body: JSON.stringify(editSingleUser),
       };
       const response = await fetch(
-        `${apiUrl}/users/${editUser.id}`,
+        `${apiUrl.apiUrlUser}/users/${editUser.id}`,
         configObject
       );
       const data = await response.json();
@@ -50,7 +50,7 @@ const EditUsers = ({ editUser, setOpenModal, getInformation }) => {
           store.addNotification({
             ...notification,
             title: "Wonderful!!!",
-            message: "su usuario ha sido actualizado con éxito (trad)",
+            message: t("labels.success-update-user"),
             type: "success",
           });
           setOpenModal(false);
@@ -73,7 +73,7 @@ const EditUsers = ({ editUser, setOpenModal, getInformation }) => {
   };
 
   const formSchema = Yup.object({
-    name: Yup.string().required(t("labels.field-required")).min(5),
+    name: Yup.string().required(t("labels.field-required")),
     email: Yup.string()
       .email("invalid email")
       .required(t("labels.field-required")),

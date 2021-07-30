@@ -12,6 +12,7 @@
     "animate.css": "^4.1.1",
     "classnames": "^2.2.6",
     "formik": "^2.2.6",
+    "google-map-react": "^2.1.9",
     "i18next": "^19.8.4",
     "node-sass": "^4.14.1",
     "ramda": "^0.27.1",
@@ -21,6 +22,7 @@
     "react-dom": "^16.13.1",
     "react-i18next": "^11.8.5",
     "react-notifications-component": "^3.0.3",
+    "react-places-autocomplete": "^7.3.0",
     "react-redux": "^7.2.1",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.3",
@@ -32,6 +34,7 @@
     "seamless-immutable": "^7.1.4",
     "semantic-ui-css": "^2.4.1",
     "semantic-ui-react": "^2.0.3",
+    "styled-components": "^5.3.0",
     "universal-cookie": "^4.0.4",
     "yup": "^0.32.8"
   },

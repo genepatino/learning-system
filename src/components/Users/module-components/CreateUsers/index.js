@@ -32,7 +32,7 @@ const CreateUsers = ({ setOpenModal, getInformation }) => {
         },
         body: JSON.stringify(formData),
       };
-      const response = await fetch(`${apiUrl}/users`, options);
+      const response = await fetch(`${apiUrl.apiUrlUser}/users`, options);
       const data = await response.json();
 
       let errField = [];
@@ -93,7 +93,7 @@ const CreateUsers = ({ setOpenModal, getInformation }) => {
   };
 
   const formSchema = Yup.object({
-    name: Yup.string().required(t("labels.field-required")).min(5),
+    name: Yup.string().required(t("labels.field-required")),
     email: Yup.string()
       .email("invalid email")
       .required(t("labels.field-required")),
