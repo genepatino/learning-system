@@ -1,7 +1,8 @@
 {
   "titles": {
-    "h2-title-login": "Iniciar Sesión",
-    "category-Resourses": "Recursos"
+    "h2-title-login": "Iniciar sesión",
+    "origin-address": "Ingrese su dirección de origen",
+    "destination-address": "Ingrese su dirección de destino"
   },
   "labels": {
     "name": "Nombre",
@@ -30,6 +31,7 @@
     "error-message": "Errors have occurred in the following information field:",
     "error-page": "Vaya, parece que se han presentado errores con su solicitud",
     "success-message": "El nuevo usuario se ha creado perfectamente",
+    "success-update-user": "El nombre de usuario se ha actualizado correctamente",
     "status-female": "Femenino",
     "status-male": "Masculino",
     "select": "Seleccione",
@@ -37,12 +39,13 @@
     "option-inactive": "Inactivo",
     "return": "Regresar",
     "edit-user": "Editar Usuario",
-    "update-user": "Actualizar usuario"
+    "update-user": "Actualizar usuario",
+    "route-management": "Gestión de rutas"
   },
   "menu": {
     "resourses": "Recursos",
     "users": "Usuarios",
-    "finance": "Finanzas",
+    "routes": "Rutas",
     "setting": "Ajustes",
     "audit": "Auditoría",
     "notes": "Notas",
@@ -50,6 +53,7 @@
     "service": "Servicio",
     "conveyors": "Transportadoras",
     "user-list": "Lista de Usurios",
+    "directions": "Direcciones",
     "item": "Articulo"
   }
 }

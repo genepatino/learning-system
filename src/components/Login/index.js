@@ -13,6 +13,7 @@ import { useTranslation } from "react-i18next";
 import Cookies from "universal-cookie";
 
 import "../utility/components-utility/FontAwesomeIcon/index";
+import classNames from "classnames";
 import "./login.scss";
 
 const Login = ({
@@ -48,10 +49,10 @@ const Login = ({
       const cookies = new Cookies();
       cookies.set(
         "accessToken",
-        "Bearer 6f2859c486ff0b618a75d36512e09b61671b00e3b40fc6a9ab305a0c04cb6b4c",
+        "Bearer 60e77d6ad756a82358b8fbfa5c2b83809e220132927ccae4c70dd89b9acd6279",
         {
           path: "/",
-          expires: new Date("Wed, 26 Mar 2021 10:30:00 GMT"),
+          expires: new Date("Tue, 03 May 2022 10:30:00 GMT"),
         }
       );
       history.push("/admin");
@@ -71,7 +72,13 @@ const Login = ({
         <div className="login-form">
           <form onSubmit={handleSubmit}>
             <div className="form">
-              <h2 className="h2-title">{t("titles.h2-title-login")}</h2>
+              <h2
+                className={classNames("h2-title", {
+                  "h2-title-error": error !== "",
+                })}
+              >
+                {t("titles.h2-title-login")}
+              </h2>
 
               {error !== "" && (
                 <div className="error">
@@ -103,7 +110,11 @@ const Login = ({
                 icon="eye"
               />
 
-              <div className="remember">
+              <div
+                className={classNames("remember", {
+                  "remember-error": error !== "",
+                })}
+              >
                 <div className="input-remenber">
                   <label className="label-checkbox">
                     <Checkbox className="checkbox-style" />
@@ -120,7 +131,11 @@ const Login = ({
               </div>
               <Button button={t("labels.log-in")} icon="" />
 
-              <footer className="footer-container">
+              <footer
+                className={classNames("footer-container", {
+                  "footer-container-error": error !== "",
+                })}
+              >
                 <div className="footer-login">
                   <span className="inscribete">
                     {t("labels.new-organization")}

@@ -48,6 +48,7 @@ const UnfoldedNote = ({ note, setModalOpen, setNoteActive, deletedNote }) => {
                 </div>
               );
             }
+            return null;
           })}
         </div>
 
@@ -72,6 +73,7 @@ const UnfoldedNote = ({ note, setModalOpen, setNoteActive, deletedNote }) => {
                 </div>
               );
             }
+            return null;
           })}
         </div>
       </div>

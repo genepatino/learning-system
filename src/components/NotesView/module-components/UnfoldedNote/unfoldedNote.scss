@@ -13,11 +13,11 @@
   .note-title-remove {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 8px;
     align-items: baseline;
 
     .title {
       margin: 0;
+      font-size: 16px;
     }
 
     .remove-note {
@@ -27,6 +27,7 @@
 
   .annotations {
     display: flex;
+    font-size: 14px;
     flex-direction: column;
     -webkit-hyphens: auto;
     -ms-hyphens: auto;
@@ -38,7 +39,6 @@
     .checkbox-annotation {
       display: flex;
       align-items: baseline;
-      margin-top: 5px;
     }
   }
 
@@ -133,8 +133,8 @@
       display: flex;
       flex-direction: column;
       margin-top: 7px;
-      border-top: 0.2px solid #888888;
       text-decoration-line: line-through;
+      /* border-top: 0.2px solid #888888; */
       color: #9597a0;
       font-weight: 300px;
       /* word-break: break-all; */

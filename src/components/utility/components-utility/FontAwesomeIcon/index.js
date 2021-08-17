@@ -26,6 +26,7 @@ import {
   faPlusCircle,
   faUserPlus,
   faUndoAlt,
+  faRoute,
 } from "@fortawesome/free-solid-svg-icons";
 
 library.add(
@@ -55,5 +56,6 @@ library.add(
   faUser,
   faPlusCircle,
   faUserPlus,
-  faUndoAlt
+  faUndoAlt,
+  faRoute
 );
